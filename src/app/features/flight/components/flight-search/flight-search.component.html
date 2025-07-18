@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="form-area">
+  <div class="row g-4 align-items-end">
+    <div class="col-md-4">
+      <label class="form-label">From</label>
+      <input type="text" formControlName="from" class="form-control styled-input" placeholder="e.g. Istanbul" />
+    </div>
+
+    <div class="col-md-4">
+      <label class="form-label">To</label>
+      <input type="text" formControlName="to" class="form-control styled-input" placeholder="e.g. Berlin" />
+    </div>
+
+    <div class="col-md-4">
+      <label class="form-label">Date</label>
+      <input type="date" formControlName="date" class="form-control styled-input" />
+    </div>
+  </div>
+
+  <div class="text-end mt-4">
+    <button type="submit" class="btn btn-thy" [disabled]="form.invalid">
+
+      🔍 Search Flights
+    </button>
+    <div class="text-danger mt-2" *ngIf="form.errors?.['locationRequired']">
+      ⚠️ Please enter at least one of "From" or "To".
+    </div>
+  </div>
+</form>

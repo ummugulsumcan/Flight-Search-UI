@@ -1,0 +1,63 @@
+.form-area {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.form-area .form-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+
+.form-area .styled-input {
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  padding: 10px 14px;
+  transition: 0.3s ease;
+}
+
+.form-area .styled-input:focus {
+  border-color: #005eb8;
+  box-shadow: 0 0 0 0.15rem rgba(0, 94, 184, 0.2);
+}
+
+.form-area .btn-thy {
+  background-color: #c8102e;
+  /* THY kırmızısı */
+  color: white;
+  padding: 10px 26px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.form-area .btn-thy:hover {
+  background-color: #a00d25;
+}
+
+.form-area .btn-thy:disabled {
+  background-color: #e0e0e0;
+  color: #888;
+  cursor: not-allowed;
+}
+
+:host {
+  display: block;
+  animation: fadeSlideIn 0.5s ease-in-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

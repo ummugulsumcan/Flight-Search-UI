@@ -1,0 +1,76 @@
+.card {
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+    color: #333;
+  }
+
+  .card-footer {
+    padding-top: 0;
+  }
+}
+
+:host {
+  display: block;
+  animation: fadeInCard 0.3s ease-in-out;
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.flight-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  h5 {
+    font-weight: 600;
+  }
+
+  img {
+    border-radius: 4px;
+  }
+}
+
+.btn-book {
+  background-color: #2e67d2;
+  color: white;
+  padding: 10px 26px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #2ed262;
+  }
+
+  &:disabled {
+    background-color: #e0e0e0;
+    color: #888;
+    cursor: not-allowed;
+  }
+}

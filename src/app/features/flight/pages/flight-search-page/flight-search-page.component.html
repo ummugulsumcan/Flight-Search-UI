@@ -1,0 +1,22 @@
+<div class="page-wrapper">
+  <div class="search-section">
+    <h2 class="mb-4 text-center text-thy">Flight Search</h2>
+    <app-flight-search (search)="onSearch($event)" [prefillData]="formData"></app-flight-search>
+  </div>
+
+  <div class="results-section mt-5">
+    <div *ngIf="results.length > 0; else noResults">
+      <div class="row justify-content-center g-4">
+        <div class="col-md-6 col-lg-4" *ngFor="let flight of results">
+          <app-flight-card [flight]="flight"></app-flight-card>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noResults>
+      <div class="no-results">
+        <p>No flights found. Try different search criteria.</p>
+      </div>
+    </ng-template>
+  </div>
+</div>

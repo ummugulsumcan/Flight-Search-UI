@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "from": "Istanbul",
+    "to": "Paris",
+    "date": "2025-08-01",
+    "time": "08:00 → 10:30",
+    "duration": "2h 30m",
+    "price": "€120"
+  },
+  {
+    "id": "2",
+    "from": "Istanbul",
+    "to": "Tokyo",
+    "date": "2025-08-05",
+    "time": "01:45 → 17:00",
+    "duration": "12h 15m",
+    "price": "₺19.500"
+  },
+  {
+    "id": "3",
+    "from": "Istanbul",
+    "to": "New York",
+    "date": "2025-08-10",
+    "time": "14:00 → 20:00",
+    "duration": "10h",
+    "price": "$980"
+  }
+]

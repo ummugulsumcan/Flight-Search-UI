@@ -1,0 +1,56 @@
+<div class="booking-wrapper">
+  <div class="booking-form">
+    <h2>✈️ Confirm Your Booking</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <!-- Full Name -->
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" formControlName="name"
+          [ngClass]="{ 'is-invalid': (f['name'].dirty || f['name'].touched) && f['name'].invalid }" />
+        <div *ngIf="(f['name'].dirty || f['name'].touched) && f['name'].invalid" class="invalid-feedback">
+          {{ f['name'] | errorMessage: submitted }}
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName="email"
+          [ngClass]="{ 'is-invalid': (f['email'].dirty || f['email'].touched) && f['email'].invalid }" />
+        <div *ngIf="(f['email'].dirty || f['email'].touched) && f['email'].invalid" class="invalid-feedback">
+          {{ f['email'] | errorMessage: submitted }}
+        </div>
+      </div>
+
+      <!-- Confirm Button -->
+      <button type="submit" class="btn btn-thy w-100 mt-3" [disabled]="form.invalid">
+        Confirm Booking
+      </button>
+
+      <!-- Back Button -->
+      <button type="button" class="btn btn-outline-secondary w-100 mt-2" (click)="goBack()">
+        ← Back
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="successModalLabel">🎉 Booking Confirmed</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>Your booking has been successfully completed.</p>
+        <p>We wish you a pleasant flight! ✈️</p>
+        <button class="btn btn-success mt-2" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
